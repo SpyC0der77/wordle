@@ -130,8 +130,10 @@ export function Game({ solution, header }: { solution: string; header: React.Rea
       {header}
 
       {/* GAME BOARD */}
-      <main className="flex flex-1 items-center justify-center">
-        <GameBoard guesses={guesses} evals={guessEvals} currentGuess={currentGuess} />
+      <main className="flex flex-1 justify-center overflow-y-auto">
+        <div className="h-fit py-8">
+          <GameBoard guesses={guesses} evals={guessEvals} currentGuess={currentGuess} />
+        </div>
       </main>
 
       {/* KEYBOARD */}
