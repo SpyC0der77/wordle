@@ -8,7 +8,7 @@ export function About({ modal = false }: { modal?: boolean }) {
     <div>
       <div className={cn("", !modal && "border-border rounded-xl border px-6 py-5")}>
         <div className="flex items-center gap-4">
-          <img src="/logo-linkai.png" alt="Linkai" className="size-10 rounded-sm" />
+          {/* <img src="/logo-linkai.png" alt="Linkai" className="size-10 rounded-sm" /> */}
 
           <div>
             <h1 className="text-lg leading-tight font-extrabold">{"Wordle Archive"}</h1>

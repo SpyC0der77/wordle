@@ -90,7 +90,7 @@ export function DatePicker({
             variant="outline"
             size="icon"
             onClick={handleNext}
-            disabled={selectedDate.toDateString() === today.toDateString()}
+            disabled={selectedDate >= today}
           >
             <ArrowBigRight className="size-5" />
           </Button>

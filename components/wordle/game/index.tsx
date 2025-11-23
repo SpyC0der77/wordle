@@ -137,14 +137,12 @@ export function Game({ solution, header }: { solution: string; header: React.Rea
       </main>
 
       {/* KEYBOARD */}
-      <div>
-        <Keyboard
-          evals={keyboardEvals}
-          disabled={gameStatus !== "in_progress"}
-          setCurrentGuess={setCurrentGuess}
-          submitGuess={submitGuess}
-        />
-      </div>
+      <Keyboard
+        evals={keyboardEvals}
+        disabled={gameStatus !== "in_progress"}
+        setCurrentGuess={setCurrentGuess}
+        submitGuess={submitGuess}
+      />
     </div>
   );
 }

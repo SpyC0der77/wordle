@@ -14,7 +14,7 @@ interface KeyboardProps {
 
 export function Keyboard({ evals, disabled, setCurrentGuess, submitGuess }: KeyboardProps) {
   return (
-    <div className="flex flex-col gap-2 px-2 pb-4 xl:px-6">
+    <div className="flex flex-col gap-2 px-2 pb-2 xl:px-6 xl:pb-4">
       <div className="flex h-14 gap-1">
         {["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"].map((letter) => (
           <KeyboardKey

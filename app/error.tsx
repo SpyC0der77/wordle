@@ -26,8 +26,8 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
       />
 
       <p className="text-muted-foreground mt-8 text-sm leading-tight">
-        {/* {"Something went wrong. Please try again later."} */}
-        {error.message}
+        {"Something went wrong. Please try again later."}
+        {/* {error.message} */}
       </p>
 
       <Link href="/">
