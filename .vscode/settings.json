@@ -1,0 +1,14 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  
+  // Auto-detect ESLint in the right project (supports flat config)
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "eslint.useFlatConfig": true,
+
+  // Ensure Prettier only runs where a config exists
+  "prettier.requireConfig": true
+}
