@@ -98,7 +98,7 @@ export function DatePicker({
       </div>
 
       <Calendar
-        className={cn("h-170 w-full xl:h-97", !modal && "border-border rounded-xl border")}
+        className={cn("h-170 w-full xl:h-105", !modal && "border-border rounded-xl border")}
         mode="single"
         captionLayout="dropdown"
         hidden={{ before: WORDLE_START_DATE, after: today }}
