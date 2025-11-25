@@ -1,5 +1,6 @@
 "use client";
 
+import { useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Calendar } from "@/components/ui/calendar";
@@ -18,8 +19,11 @@ export function DatePicker({
 }) {
   const router = useRouter();
 
-  const today = new Date();
-  today.setHours(23, 59, 59, 999); // End of today
+  const today = useMemo(() => {
+    const date = new Date();
+    date.setHours(23, 59, 59, 999); // End of today
+    return date;
+  }, []);
 
   const handleSelect = (date: Date) => {
     const year = date.getFullYear().toString().padStart(4, "0");
