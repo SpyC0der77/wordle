@@ -11,21 +11,33 @@ export function evaluateGuess(guess: string, solution: string) {
   }
 
   const result: ("correct" | "present" | "absent")[] = [];
-  for (let i = 0; i < guess.length; i++) {
-    const remainingCount = remainingLetters.get(guess[i]);
 
-    if (remainingCount === undefined || remainingCount === 0) {
-      // Absent letter
-      result.push("absent");
-    } else if (guess[i] === solution[i]) {
-      // Correct letter
+  // First pass: mark all exact matches (correct)
+  for (let i = 0; i < guess.length; i++) {
+    if (guess[i] === solution[i]) {
+      const remainingCount = remainingLetters.get(guess[i]) ?? 0;
       remainingLetters.set(guess[i], remainingCount - 1);
       result.push("correct");
-    } else {
-      // Present letter
+      continue;
+    }
+
+    result.push("absent"); // Placeholder, will be updated in second pass
+  }
+
+  // Second pass: mark remaining letters as present if they exist
+  for (let i = 0; i < guess.length; i++) {
+    if (result[i] === "correct") {
+      continue;
+    }
+
+    const remainingCount = remainingLetters.get(guess[i]);
+    if (remainingCount !== undefined && remainingCount > 0) {
       remainingLetters.set(guess[i], remainingCount - 1);
-      result.push("present");
+      result[i] = "present";
+    } else {
+      result[i] = "absent";
     }
   }
+
   return result;
 }
